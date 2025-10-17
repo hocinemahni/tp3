@@ -1,0 +1,99 @@
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: #f1f1f1; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(156, 156, 156);
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+
+.horizontal {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  min-height: 64px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+/* Zone centrale */
+.millieu {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.millieu2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 10px;
+  min-width: 0;
+}
+
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+
+.info-div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  min-height: 150px;
+}
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
+  flex: 0 0 220px;
+  max-width: 100%;
+}
+
+
+@media (max-width: 900px) {
+  .sidebar { flex-basis: 180px; }
+  .info-div { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .millieu { flex-direction: column; }
+  .sidebar { order: 2; width: 100%; }
+  .info-div { grid-template-columns: 1fr; }
+  .horizontal { min-height: 56px; }
+}
